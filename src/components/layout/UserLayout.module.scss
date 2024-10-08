@@ -1,0 +1,81 @@
+@import "../../cssComponents/mediaMixin";
+
+.container{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navItemIcon{
+  width: 24px;
+}
+
+.mainLogo{
+  width: 100px;
+  margin: 50px 0;
+}
+
+.navItemContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 140px;
+  width: 250px;
+  border-bottom: 1px solid #DBDBDB;
+  cursor: pointer;
+}
+
+.navItemText{
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 20px;
+  text-align: center;
+}
+
+@include _2560{
+  .navItemContainer{
+    height: 180px;
+    width: 300px;
+  }
+  .navItemIcon{
+    width: 30px;
+  }
+  .mainLogo{
+    width: 130px;
+  }
+}
+
+@include _3440{
+  .navItemContainer{
+    height: 200px;
+    width: 340px;
+  }
+  .navItemIcon{
+    width: 40px;
+  }
+  .mainLogo{
+    width: 150px;
+  }
+}
+
+@include _3840{
+  .navItemContainer{
+    height: 220px;
+    width: 360px;
+  }
+  .navItemIcon{
+    width: 50px;
+  }
+  .mainLogo{
+    width: 180px;
+  }
+}

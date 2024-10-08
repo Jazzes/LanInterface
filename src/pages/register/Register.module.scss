@@ -1,0 +1,219 @@
+@import "../../cssComponents/mediaMixin";
+
+
+.container, .form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.header {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.modes{
+  display: flex;
+  margin-top: 55px;
+}
+
+.firstMode, .secondMode{
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: #787878;
+  border-radius: 35px;
+  background-color: #EFEFEF;
+  height: 40px;
+  width: 160px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .3s linear all;
+  @include _2560{
+    height: 50px;
+    width: 240px;
+  }
+  @include _3440{
+    height: 60px;
+    width: 280px;
+  }
+  @include _3840{
+    height: 70px;
+    width: 340px;
+  }
+}
+
+.firstMode{
+  position: relative;
+  margin-right: 25px;
+  img{
+    background-color: #646464;
+    border-radius: 50%;
+  }
+  @include _2560{
+    margin-right: 30px;
+  }
+  @include _3440{
+  margin-right: 40px;
+  }
+  @include _3840{
+    margin-right: 45px;
+  }
+}
+
+.firstModeImg{
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  right: 15px;
+  @include _2560{
+    width: 25px;
+  }
+  @include _3440{
+    width: 30px;
+  }
+  @include _3840{
+    width: 35px;
+  }
+}
+
+.activeMode{
+  color: white;
+  background-color: #DC0000;
+  img{
+    box-shadow: none;
+    background-color: transparent;
+  }
+}
+
+.hintRegistration{
+  position: absolute;
+  right: 10px;
+  transform: translateX(100%);
+  font-size: 1.4rem;
+  background-color: #EFEFEF;
+  color: black;
+  text-transform: none;
+  border-radius: 8px;
+  padding: 10px;
+  top: 0;
+  transition: .3s linear all;
+  pointer-events: none;
+  opacity: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.hintRegistrationActive{
+  opacity: 1;
+  right: -10px;
+  pointer-events: auto;
+}
+
+.form{
+  width: 640px;
+  margin-top: 35px;
+  @include _2560{
+    width: 900px;
+  }
+  @include _3440{
+    width: 1050px;
+  }
+  @include _3840{
+    width: 1200px;
+  }
+}
+
+.row{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.agreeRow{
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+  align-items: center;
+}
+
+.agreeText{
+  font-family: Roboto, sans-serif;
+  font-size: 1.3rem;
+  margin-left: 15px;
+  @include _2560{
+    margin-left: 20px;
+  }
+  @include _3440{
+    margin-left: 30px;
+  }
+  @include _3840{
+    margin-left: 35px;
+  }
+}
+
+.register{
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+  font-size: 1.4rem;
+  border: 0;
+  outline: 0;
+  box-shadow: 0 4px 7px rgba(220, 0, 0, 0.17);
+  width: 100%;
+  border-radius: 100px;
+  opacity: 0.2;
+  background-color: #DC0000;
+  text-align: center;
+  padding: 13px;
+  margin-top: 30px;
+  pointer-events: none;
+  transition: .3s linear all;
+  @include _2560{
+    padding: 20px;
+  }
+  @include _3440{
+    padding: 25px;
+  }
+  @include _3840{
+    padding: 30px;
+  }
+}
+
+.activeRegister{
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.back{
+  width: 100%;
+  color: black;
+  padding: 13px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+  @include _2560{
+    padding: 20px;
+  }
+  @include _3440{
+    padding: 25px;
+  }
+  @include _3840{
+    padding: 30px;
+  }
+}
+
+.backImg{
+  width: 19px;
+  margin: 0 15px;
+}

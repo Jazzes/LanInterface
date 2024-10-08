@@ -1,0 +1,17 @@
+@mixin _2560 {
+  @media (min-width: 2560px){
+    @content;
+  }
+}
+
+@mixin _3440 {
+  @media (min-width: 3440px){
+    @content;
+  }
+}
+
+@mixin _3840 {
+  @media (min-width: 3840px){
+    @content;
+  }
+}

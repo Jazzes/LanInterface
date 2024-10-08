@@ -1,0 +1,172 @@
+@import "../../cssComponents/mediaMixin";
+
+@font-face {
+  font-family: 'Nitti Normal';
+  src: url('../../static/font/Nitti-Normal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nitti Bold';
+  src: url('../../static/font/Nitti-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+$font-nitti-normal: 'Nitti Normal', sans-serif;
+$font-nitti-bold: 'Nitti Bold', sans-serif;
+
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main{
+  display: flex;
+  flex: 1 1 auto;
+}
+.footer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.footerLinks{
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 550px;
+}
+
+.footerLink{
+  cursor: pointer;
+}
+
+.footerPowered{
+  font-size: 1.5rem;
+  white-space: pre-wrap;
+  margin-top: 20px;
+}
+
+.bigLogoUp, .bigLogoDown{
+  width: 390px;
+  position: fixed;
+}
+
+.bigLogoUp{
+  top: 0;
+  right: 0;
+  transform: translate(45%, -55%);
+}
+.bigLogoDown{
+  bottom: 0;
+  left: 0;
+  transform: translate(-45%, 55%);
+}
+
+.tariffContainer{
+  position: fixed;
+  left: 100px;
+  top: 90px;
+}
+
+.timeAndL{
+  display: flex;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  align-items: center;
+}
+
+.compNumber{
+  font-size: 15.4rem;
+  font-family: $font-nitti-normal;
+  line-height: 1;
+}
+
+.tariff{
+  font-size: 3.9rem;
+  font-family: $font-nitti-bold;
+  line-height: 1;
+}
+
+.language{
+  font-size: 1.5rem;
+  font-weight: 900;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px #C9C9C9 solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.curTime{
+  font-size: 4.5rem;
+  font-family: $font-nitti-bold;
+  margin-left: 15px;
+  @include _2560{
+    margin-left: 20px;
+  }
+  @include _3440{
+    margin-left: 30px;
+  }
+  @include _3840{
+    margin-left: 35px;
+  }
+}
+
+@include _2560{
+  .language{
+    width: 50px;
+    height: 50px;
+  }
+  .bigLogoUp, .bigLogoDown{
+    width: 450px;
+  }
+  .footerPowered{
+    img{
+      height: 20px;
+    }
+  }
+  .footerLinks{
+    width: 800px;
+  }
+}
+
+@include _3440{
+  .language{
+    width: 60px;
+    height: 60px;
+    border: 3px #C9C9C9 solid;
+  }
+  .bigLogoUp, .bigLogoDown{
+    width: 600px;
+  }
+  .footerPowered{
+    img{
+      height: 25px;
+    }
+  }
+  .footerLinks{
+    width: 950px;
+  }
+}
+
+@include _3840{
+  .language {
+    width: 70px;
+    height: 70px;
+  }
+  .footerPowered{
+    img{
+      height: 30px;
+    }
+  }
+  .footerLinks{
+    width: 1100px;
+  }
+}

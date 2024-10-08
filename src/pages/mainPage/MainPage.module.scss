@@ -1,0 +1,333 @@
+@import "../../cssComponents/mediaMixin";
+
+.container{
+  background-color: #EAEAEA;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 40px 80px;
+  border-top-left-radius: 45px;
+  border-bottom-left-radius: 45px;
+  flex: 1;
+  min-height: 100vh;
+  justify-content: space-between;
+  @include _3840{
+    padding: 40px 40px 120px;
+  }
+}
+
+.menu{
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.menuItemContainer{
+  width: 19%;
+  aspect-ratio: 2/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 25px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  @include _2560{
+    img{
+      height: 60px;
+    }
+  }
+  @include _3440{
+    img{
+      height: 80px;
+    }
+  }
+  @include _3840{
+    img{
+      height: 100px;
+    }
+  }
+}
+
+.footerPowered{
+  font-size: 1.5rem;
+  white-space: pre-wrap;
+  margin-top: 20px;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+
+  @include _2560{
+    img{
+      height: 20px;
+    }
+  }
+  @include _3440{
+    img{
+      height: 25px;
+    }
+  }
+  @include _3840{
+    img{
+      height: 30px;
+    }
+  }
+}
+
+.menuItemText{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-top: 30px;
+}
+
+.row{
+  display: flex;
+  align-self: stretch;
+}
+
+.block{
+  display: flex;
+  flex-wrap: wrap;
+  align-self: stretch;
+}
+
+.tariffes{
+  background: linear-gradient(152deg, #3D3D3D 0%, #434343 53%, #606060 100%);
+  color: white;
+  border-radius: 25px;
+  padding: 25px;
+  margin-bottom: 40px;
+  flex-shrink: 0;
+  width: 420px;
+  @include _2560{
+    width: 540px;
+    padding: 40px;
+  }
+  @include _3440{
+    width: 800px;
+    padding: 50px;
+  }
+}
+
+.tariffHeader{
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.tariffItemContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+
+  @include _2560{
+    padding: 40px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+
+  }
+  @include _3440{
+    border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+  }
+  @include _3840{
+    padding: 60px 0;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+  }
+
+}
+
+.tarrifItemName{
+  font-size: 1.3rem;
+  opacity: 0.8;
+}
+
+.tarrifItemPrice{
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+.profile{
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.7rem;
+  width: calc(50% - 60px);
+  margin-right: 60px;
+  margin-bottom: 40px;
+}
+
+.avatar{
+  width: 50px;
+  margin-right: 15px;
+}
+
+.itemBlock, .bannerBlock{
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: calc(50% - 60px);
+  margin-right: 60px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  @include _2560{
+    padding: 35px;
+  }
+  @include _3440{
+    padding: 40px;
+    width: calc(50% - 150px);
+    margin-right: 150px;
+    margin-bottom: 30px;
+  }
+  @include _3840{
+    width: calc(50% - 60px);
+    margin-right: 60px;
+    margin-bottom: 40px;
+  }
+}
+
+.bannerBlock{
+  padding: 0;
+  position: relative;
+  @include _3440{
+    height: 400px;
+  }
+  @include _3840{
+    height: auto;
+  }
+}
+
+.bannerImg{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.swiperContainer{
+  display: flex;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  @include _2560{
+    right: 30px;
+    top: 30px;
+  }
+  @include _3440{
+    right: 40px;
+    top: 40px;
+  }
+  @include _3840{
+    right: 50px;
+    top: 50px;
+  }
+}
+
+.swiperArrow{
+  width: 31px;
+  height: 31px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.14);
+  border-radius: 50px;
+  cursor: pointer;
+
+  @include _2560{
+    width: 50px;
+    height: 50px;
+  }
+  @include _3440{
+    width: 60px;
+    height: 60px;
+  }
+  @include _3840{
+    width: 70px;
+    height: 70px;
+  }
+}
+
+
+.itemBlockRow{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemBlockText{
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.itemBlockValue{
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.itemBlockHeader{
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.refresh{
+  cursor: pointer;
+  @include _2560{
+    width: 40px;
+    height: 40px;
+  }
+  @include _3440{
+    width: 50px;
+    height: 50px;
+  }
+  @include _3840{
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.topUp{
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.3rem;
+  background-color: rgba(220, 0, 0, 1);
+  box-shadow: 0 4px 12px rgba(220, 0, 0, 0.19);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 13px;
+  border-radius: 100px;
+  cursor: pointer;
+
+  @include _2560{
+    padding: 20px;
+  }
+  @include _3440{
+    padding: 25px;
+  }
+  @include _3840{
+    padding: 30px;
+  }
+}
+
+.balanceRow{
+  display: flex;
+  margin: 30px 0;
+}
+
+.balance{
+  font-weight: 900;
+  font-size: 3.4rem;
+
+}
+
+.bonusBalance{
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.5rem;
+  margin-left: 15px;
+  font-weight: 900;
+}

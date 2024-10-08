@@ -1,0 +1,71 @@
+import React, {memo, useContext, useState} from 'react';
+import styles from "./Register.module.scss"
+import InputInitials from "../../components/inputs/InputInitials";
+import InputBirthDate from "../../components/inputs/InputBirthDate";
+import InputID from "../../components/inputs/InputID";
+import InputNewPassword from "../../components/inputs/InputNewPassword";
+import InputConfirmPassword from "../../components/inputs/InputConfirmPassword";
+import InputIDData from "../../components/inputs/InputIDData";
+import {Link, useNavigate} from "react-router-dom";
+import InputChecker from "../../components/inputs/InputChecker";
+import backImg from "../../static/photos/arrow_back.svg"
+import {UserContext} from "../../context/Context";
+import InputNumberRegistration from "../../components/inputs/InputNumberRegistration";
+
+const FullRegistration = memo(() => {
+    const navigate = useNavigate();
+
+    const {changeAuth} = useContext(UserContext)
+
+    const [isFormValid, setIsFormValid] = useState(false)
+
+    const handleFormInput = (e : React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setIsFormValid(e.currentTarget.checkValidity())
+    }
+
+    const handleFormSubmit = (e : React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        if (isFormValid) {
+            changeAuth()
+            navigate('/')
+        }
+    }
+    return (
+        <form className={styles.form} onSubmit={handleFormSubmit}  onInput={handleFormInput}>
+            <InputInitials/>
+
+            <div className={styles.row}>
+                <InputNumberRegistration/>
+                <InputBirthDate/>
+            </div>
+
+            <div className={styles.row}>
+                <InputID/>
+                <InputIDData/>
+            </div>
+
+            <div className={styles.row}>
+                <InputNewPassword/>
+                <InputConfirmPassword/>
+            </div>
+
+            <div className={styles.agreeRow}>
+                <InputChecker/>
+                <div className={styles.agreeText}>Я даю свое право на информационную рассылку</div>
+            </div>
+
+            <button type={"submit"} className={styles.register + (isFormValid ? (" " + styles.activeRegister) : "")}>Зарегистрироваться</button>
+
+            <Link className={styles.back} to="/">
+                <img className={styles.backImg} src={backImg} alt=""/>
+                вернутся на главную
+                <div className={styles.backImg}></div>
+            </Link>
+
+        </form>
+    );
+})
+
+export default FullRegistration;

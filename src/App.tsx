@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useContext} from 'react';
+import {Route, Routes} from "react-router-dom";
+import UserLayout from "./components/layout/UserLayout";
+import NoAuthLayout from "./components/layout/NoAuthLayout";
+import {UserContext} from "./context/Context";
+import MainPage from "./pages/mainPage/MainPage";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const {auth} = useContext(UserContext)
+
+    return (
+        <Routes>
+            {auth ?
+                <Route element={<UserLayout/>}>
+                    <Route path="/" index element={<MainPage/>}/>
+                </Route>
+                :
+                <Route element={<NoAuthLayout/>}>
+                    <Route path="/" index element={<Login/>}/>
+                    <Route path="/login" element={<Login/>}/>
+
+                    <Route path="/register" element={<Register/>}/>
+                </Route>
+            }
+        </Routes>
+    );
 }
 
 export default App;

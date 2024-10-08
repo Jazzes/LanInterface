@@ -1,0 +1,152 @@
+@import "../../cssComponents/mediaMixin";
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 45px;
+  width: 340px;
+  @include _2560{
+    width: 450px;
+  }
+  @include _3440{
+    width: 550px;
+  }
+  @include _3840{
+    width: 650px;
+  }
+}
+
+.logo{
+  @include _2560{
+    width: 160px;
+  }
+  @include _3440{
+    width: 220px
+  }
+  @include _3840{
+    width: 300px;
+  }
+}
+
+.forgetPassword{
+  font-size: 1.2rem;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login{
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+  font-size: 1.4rem;
+  border: 0;
+  outline: 0;
+  box-shadow: 0 4px 7px rgba(220, 0, 0, 0.17);
+  width: 340px;
+  border-radius: 100px;
+  opacity: 0.2;
+  background-color: #DC0000;
+  text-align: center;
+  padding: 13px;
+  margin-top: 50px;
+  pointer-events: none;
+  transition: .3s linear all;
+  @include _2560{
+    width: 450px;
+    padding: 20px;
+  }
+  @include _3440{
+    width: 550px;
+    padding: 25px;
+  }
+  @include _3840{
+    width: 650px;
+    padding: 30px;
+  }
+}
+
+.activeLogin{
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.registerCont{
+  margin-top: 70px;
+}
+
+.registerText{
+  font-size: 1.3rem;
+}
+
+.register{
+  color: #DC0000;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 5px;
+  display: block;
+  text-decoration: none;
+}
+
+.downloadCont{
+  margin-top: 85px;
+}
+
+.downloadText{
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.downloadImgs{
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.downloadGoogleStore{
+  margin-right: 20px;
+  cursor: pointer;
+  @include _2560{
+    margin-right: 30px;
+  }
+  @include _3440{
+    margin-right: 40px;
+  }
+  @include _3840{
+    margin-right: 50px;
+  }
+}
+
+.downloadAppStore{
+  cursor: pointer;
+}
+
+.downloadAppStore, .downloadGoogleStore{
+  @include _2560{
+    width: 200px;
+  }
+  @include _3440{
+    width: 260px;
+  }
+  @include _3840{
+    width: 320px;
+  }
+}
